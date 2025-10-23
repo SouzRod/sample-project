@@ -1,6 +1,6 @@
 # API Project
 
-Este é um projeto de API REST construído com Fastify, documentação Swagger e suporte a CORS.
+Este é um projeto de API REST construído com Fastify e documentação Swagger.
 
 ## 🚀 Tecnologias
 
@@ -14,13 +14,13 @@ Este é um projeto de API REST construído com Fastify, documentação Swagger e
 
 - Node.js (versão 18+)
 - npm ou yarn
-- MongoDB (se estiver usando banco de dados)
+- MongoDB
 
 ## 🔧 Configuração do Ambiente
 
 1. Clone o repositório
 ```bash
-git clone [url-do-seu-repositorio]
+git clone [url-do-repositorio]
 cd sample-project
 ```
 
@@ -60,23 +60,12 @@ npm start
 
 A documentação Swagger está disponível em:
 ```
-http://localhost:3000/api/docs
+http://localhost:3001/api/sampleproject/docs
 ```
 
 ## 🛣️ Rotas da API
 
-A API usa o prefixo `/api` para todas as rotas.
-
-### Endpoints disponíveis:
-
-> Note: Complete esta seção com as rotas específicas do seu projeto
-
-Exemplo:
-- `GET /api/health` - Verificação de saúde da API
-- `GET /api/[recurso]` - Lista recursos
-- `POST /api/[recurso]` - Cria novo recurso
-- `PUT /api/[recurso]/:id` - Atualiza recurso
-- `DELETE /api/[recurso]/:id` - Remove recurso
+A API usa o prefixo `/api/sampleproject` para todas as rotas.
 
 ## 🔍 Linting e Formatação
 
@@ -91,18 +80,7 @@ Para verificar o código:
 npm run lint
 ```
 
-## 🤝 Contribuindo
-
-1. Faça o fork do projeto
-2. Crie sua branch de feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## 📝 Licença
-
-Este projeto está sob a licença ISC.
-
----
-
-⌨️ com ❤️ por [seu-nome-aqui]
+Para colocar o código no padrão:
+```bash
+npm run lint:fix
+```
