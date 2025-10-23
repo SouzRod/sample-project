@@ -1,4 +1,4 @@
-# API Project
+# Sample Project
 
 Este é um projeto de API REST construído com Fastify e documentação Swagger.
 
