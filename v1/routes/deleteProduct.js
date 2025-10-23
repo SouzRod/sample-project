@@ -1,6 +1,6 @@
-import { deleteProduct } from "../controllers/index.js";
+const { deleteProduct } = require('../controllers');
 
-export default {
+module.exports = {
   url: '/v1/product',
   method: 'DELETE',
   handler: deleteProduct,

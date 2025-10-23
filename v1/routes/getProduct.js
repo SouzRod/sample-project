@@ -1,6 +1,6 @@
-import { getProduct } from "../controllers/index.js";
+const { getProduct } = require('../controllers');
 
-export default {
+module.exports = {
   url: '/v1/product',
   method: 'GET',
   handler: getProduct,

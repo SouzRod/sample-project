@@ -1,6 +1,6 @@
-import { v4 } from 'uuid';
+const { v4 } = require('uuid');
 
-export default ({ db, collectionName, configConnection }) => ({
+module.exports = ({ db, collectionName, configConnection }) => ({
   insert: async item => {
     const collection = await db.collection(collectionName, configConnection);
     const result = await collection.insertOne({ _id: v4(), ...item });

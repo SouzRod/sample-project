@@ -1,6 +1,6 @@
-import * as repositories from "../../repositories/index.js";
+const repositories = require('../../repositories');
 
-export const postProduct = async (product) => {
+const postProduct = async (product) => {
   const newProduct = {
     brand: product.brand,
     model: product.model,
@@ -9,3 +9,5 @@ export const postProduct = async (product) => {
 
   return repositories.product.insert(newProduct);
 };
+
+module.exports = { postProduct };

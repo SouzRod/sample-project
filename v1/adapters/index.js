@@ -1,5 +1,7 @@
-export * from './getProduct.js';
-export * from './getProducts.js';
-export * from './postProduct.js';
-export * from './deleteProduct.js';
-export * from './putProduct.js';
+module.exports = {
+  ...require('./getProduct.js'),
+  ...require('./getProducts.js'),
+  ...require('./postProduct.js'),
+  ...require('./deleteProduct.js'),
+  ...require('./putProduct.js'),
+};

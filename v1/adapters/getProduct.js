@@ -1,5 +1,7 @@
-import { product } from '../../repositories/index.js';
+const { product } = require('../../repositories');
 
-export const getProduct = async (id) => {
+const getProduct = async (id) => {
   return product.findOne({ _id: id });
 };
+
+module.exports = { getProduct };

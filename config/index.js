@@ -1,7 +1,11 @@
-import dotenv from 'dotenv';
-dotenv.config();
+require('dotenv').config();
 
-export default {
+module.exports = Object.freeze({
+  app: {
+    name: process.env.SERVICE_NAME,
+    port: process.env.PORT,
+    env: process.env.ENV,
+  },
   stripPrefix: {
     usePrefix: process.env.USE_PREFIX === 'true',
     path: `/api/${process.env.SERVICE_NAME.replace(/-/g, '')}`,
@@ -12,11 +16,6 @@ export default {
         ? `/api/${process.env.SERVICE_NAME.replace(/-/g, '')}` : '/',
     },
   },
-  app: {
-    name: process.env.SERVICE_NAME,
-    port: process.env.PORT,
-    env: process.env.ENV,
-  },
   mongo: {
     uri: process.env.MONGO_URI,
     dbName: process.env.MONGO_DB_NAME,
@@ -24,4 +23,4 @@ export default {
       product: process.env.MONGO_COLLECTION_PRODUCT,
     },
   },
-};
+});

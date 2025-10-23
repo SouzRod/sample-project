@@ -1,6 +1,6 @@
-import routes from './routes.js';
+const routes = require('./routes.js');
 
-export default (fastify, _, done) => {
+module.exports = (fastify, _, done) => {
   routes.forEach(route => fastify.route(route));
   done();
 };

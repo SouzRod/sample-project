@@ -1,6 +1,8 @@
-import * as adapters from "../adapters/index.js";
+const adapters = require('../adapters');
 
-export const getProducts = async (req, res) => {
+const getProducts = async (req, res) => {
   const products = await adapters.getProducts();
   res.code(200).send(products);
 };
+
+module.exports = { getProducts };

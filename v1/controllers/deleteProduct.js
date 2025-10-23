@@ -1,8 +1,10 @@
-import * as adapters from "../adapters/index.js";
+const adapters = require('../adapters');
 
-export const deleteProduct = async (req, res) => {
+const deleteProduct = async (req, res) => {
   await adapters.deleteProduct(req.query.id);
   res.code(200).send({
     message: 'Product deleted successfully',
   });
 };
+
+module.exports = { deleteProduct };

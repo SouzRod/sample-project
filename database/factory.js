@@ -1,9 +1,9 @@
-import { MongoClient } from 'mongodb';
-import config from '../config/index.js';
+const { MongoClient } = require('mongodb');
+const config = require('../config');
 
 const connectToMongoDB = async (state, url, dbName, mongoClient) => {
   try {
-    const client = await mongoClient.connect(url, { useNewUrlParser: true });
+    const client = await mongoClient.connect(url);
 
     state.db = client.db(dbName);
     state.client = client;
@@ -13,13 +13,11 @@ const connectToMongoDB = async (state, url, dbName, mongoClient) => {
   }
 };
 
-const factory = (state) => ({
-  isConnected() {
-    return state.db && state.client?.topology?.isConnected();
-  },
+const isConnected = (state) => state.db && state.client?.topology?.isConnected();
 
+const factory = (state) => ({
   async collection(collectionName) {
-    if (!this.isConnected()) {
+    if (!isConnected(state)) {
       await connectToMongoDB(
         state,
         config.mongo.uri,
@@ -30,10 +28,6 @@ const factory = (state) => ({
 
     return state.db.collection(collectionName);
   },
-
-  db() {
-    return state.db;
-  },
 });
 
-export default factory;
+module.exports = factory;

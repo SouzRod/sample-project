@@ -1,6 +1,6 @@
-import { product } from '../../repositories/index.js';
+const { product } = require('../../repositories');
 
-export const putProduct = async (id, productData) => {
+const putProduct = async (id, productData) => {
   const updatedProduct = {
     brand: productData.brand,
     model: productData.model,
@@ -8,3 +8,5 @@ export const putProduct = async (id, productData) => {
   };
   return product.update({ _id: id }, updatedProduct);
 };
+
+module.exports = { putProduct };

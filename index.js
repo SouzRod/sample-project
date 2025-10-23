@@ -1,9 +1,9 @@
-import Fastify from 'fastify';
-import swaggerUi from '@fastify/swagger-ui';
-import swagger from '@fastify/swagger';
-import cors from '@fastify/cors';
-import routes from './v1/routes/index.js';
-import config from './config/index.js';
+const Fastify = require('fastify');
+const swaggerUi = require('@fastify/swagger-ui');
+const swagger = require('@fastify/swagger');
+const cors = require('@fastify/cors');
+const routes = require('./v1/routes');
+const config = require('./config');
 
 const fastify = Fastify({ logger: true });
 

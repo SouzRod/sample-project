@@ -1,4 +1,4 @@
-import factory from './factory.js';
+const factory = require('./factory.js');
 
 const state = {
   db: null,
@@ -6,4 +6,4 @@ const state = {
 
 const wrapper = factory(state);
 
-export default wrapper;
+module.exports = wrapper;

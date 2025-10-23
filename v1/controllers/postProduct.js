@@ -1,8 +1,10 @@
-import * as adapters from "../adapters/index.js";
+const adapters = require('../adapters');
 
-export const postProduct = async (req, res) => {
+const postProduct = async (req, res) => {
   await adapters.postProduct(req.body);
   res.code(201).send({
-    message: "Product created successfully",
+    message: 'Product created successfully',
   });
 };
+
+module.exports = { postProduct };

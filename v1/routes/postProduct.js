@@ -1,6 +1,6 @@
-import { postProduct } from "../controllers/index.js";
+const { postProduct } = require('../controllers');
 
-export default {
+module.exports = {
   url: '/v1/product',
   method: 'POST',
   handler: postProduct,
