@@ -1,6 +1,6 @@
 const repositories = require('../../repositories');
 
-const postProduct = async (product) => {
+async function postProduct(product) {
   const newProduct = {
     brand: product.brand,
     model: product.model,
@@ -8,6 +8,6 @@ const postProduct = async (product) => {
   };
 
   return repositories.product.insert(newProduct);
-};
+}
 
 module.exports = { postProduct };

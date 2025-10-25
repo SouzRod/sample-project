@@ -1,7 +1,7 @@
 const { MongoClient } = require('mongodb');
 const config = require('../config');
 
-const connectToMongoDB = async (state, url, dbName, mongoClient) => {
+async function connectToMongoDB(state, url, dbName, mongoClient) {
   try {
     const client = await mongoClient.connect(url);
 
@@ -15,7 +15,7 @@ const connectToMongoDB = async (state, url, dbName, mongoClient) => {
 
 const isConnected = (state) => state.db && state.client?.topology?.isConnected();
 
-const factory = (state) => ({
+module.exports = (state) => ({
   async collection(collectionName) {
     if (!isConnected(state)) {
       await connectToMongoDB(
@@ -29,5 +29,3 @@ const factory = (state) => ({
     return state.db.collection(collectionName);
   },
 });
-
-module.exports = factory;

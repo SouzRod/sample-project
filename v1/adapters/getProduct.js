@@ -1,7 +1,7 @@
 const { product } = require('../../repositories');
 
-const getProduct = async (id) => {
+async function getProduct(id) {
   return product.findOne({ _id: id });
-};
+}
 
 module.exports = { getProduct };
