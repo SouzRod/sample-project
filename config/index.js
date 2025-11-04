@@ -12,8 +12,7 @@ module.exports = Object.freeze({
   },
   plugins: {
     swagger: {
-      basePath: process.env.USE_PREFIX === 'true'
-        ? `/api/${process.env.SERVICE_NAME.replace(/-/g, '')}` : '/',
+      basePath: process.env.USE_PREFIX === 'true' ? `/api/${process.env.SERVICE_NAME.replace(/-/g, '')}` : '/',
     },
   },
   mongo: {

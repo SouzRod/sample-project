@@ -14,16 +14,16 @@ module.exports = [
         Buffer: "readonly",
         global: "readonly",
         Atomics: "readonly",
-        SharedArrayBuffer: "readonly"
-      }
+        SharedArrayBuffer: "readonly",
+      },
     },
     rules: {
-      "semi": ["error", "always"],
-      "quotes": ["error", "single"],
-      "indent": ["error", 2],
+      semi: ["error", "always"],
+      quotes: ["error", "single"],
+      indent: ["error", 2],
       "no-unused-vars": "warn",
       "no-console": "off",
-      "max-len": ["error", { "code": 140 }]
-    }
-  }
+      "max-len": ["error", { code: 140 }],
+    },
+  },
 ];
