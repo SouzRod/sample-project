@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run lint:fix && node index.js",
-    "dev": "npm run lint:fix && nodemon index.js",
+    "start": "npm run lint:fix && nodemon index.js",
+    "start:prd": "npm run lint:fix && node index.js",
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix"
   },

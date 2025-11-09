@@ -22,10 +22,4 @@ app.register(cors, { origin: (_, cb) => cb(null, true) });
 
 app.register(routes, { prefix: config.stripPrefix.path });
 
-app.listen({ port: config.app.port }, (err) => {
-  if (err) {
-    app.log.error(err);
-    process.exit(1);
-  }
-  console.log(`App running on http://127.0.0.1:${app.server.address().port}`);
-});
+app.listen({ port: config.app.port, host: '0.0.0.0' });
